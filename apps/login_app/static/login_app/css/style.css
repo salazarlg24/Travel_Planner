@@ -1,0 +1,61 @@
+*{
+	padding: 0px;
+	margin: 0 auto;
+	/*outline: dotted 1px red;*/
+}
+.wrapper{
+	width: 1000px;
+	height: 900px;
+}
+.main{
+	width: 970px;
+    margin: 0px;
+    border: 2px solid black;
+}
+.login{
+	width: 375px;
+}
+.register{
+	width: 375px;
+}
+input{
+	display: block;
+    margin: initial;
+}
+.btn{
+	margin-top: 20px;
+}
+h2{
+	margin-top: 20px;
+}
+.header{
+	height: 33px;
+    width: 958px;
+    margin: 0px;
+    padding: 5px;
+    border: 2px solid black;
+}
+.header h3{
+	display: inline-block;
+	margin-top: 4px;
+}
+.header p{
+	display: inline-block;
+	margin-left: 600px;
+	margin-top: 4px;
+}
+
+.lose{
+	color: red;
+}
+.win{
+    background-color: green;
+    color: white;
+    font-size: 39px;
+    text-align: center;
+    border-radius: 5px;
+    width: 442px;
+}
+.error{
+	color: red;
+}

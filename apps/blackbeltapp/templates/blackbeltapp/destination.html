@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destination</title>
+</head>
+<body>
+<a href="{%url 'blackbelt:index'%}">Home</a>
+<a href="{%url 'login:logout' %}" style="margin-left: 800px;">Logout</a>
+
+<h1>{{dest.trip.destination}}</h1>
+
+
+
+<p>Planned By: {{dest.user.name}} </p>
+
+
+<p>Decription: {{dest.trip.description}}<p>
+<p>Travel Date From: {{dest.trip.date_from}} </p>
+<p>Travel Date To: {{dest.trip.date_to}}</p>
+<br>
+<h2>Other users' joining the trip:</h2>
+{%for item in alltrip%}
+<p>{{item.user.name}}</p>
+{%endfor%}
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add</title>
+</head>
+<body>
+<a href="{%url 'blackbelt:index'%}">Home</a>
+<a href="{%url 'login:logout' %}" style="margin-left: 800px;">Logout</a>
+<h1>Add a Trip</h1>
+{% if messages %}
+{% for message in messages %}
+<p>{{message}}</p>
+{% endfor %}
+{% endif %}
+
+{% csrf_token %}
+	
+	<p>Destination <input type="text" name="destin" required></p>
+	<p>Description <input type="text" name="plan" required=></p>
+	<br>
+	<p>Travel Date From <input type="date" name="from" required></p>
+	<p>Travel Date To <input type="date" name="to" required></p>
+	<br>
+	
+	<input type="submit" name="add" value="Add Trip">
+
+
+</form>
+
+</body>
+</html>

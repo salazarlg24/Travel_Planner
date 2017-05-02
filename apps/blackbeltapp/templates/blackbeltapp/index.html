@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travels</title>
+</head>
+<body>
+<a href="{%url 'login:logout' %}" style="margin-left: 800px;">Logout</a>
+<h1>Hello, {{user.name}}</h1>
+<h4>Your Trip Schedules</h4>
+<table style="border: 2px solid black; width: 800px; text-align: center;">
+	<tr>
+		<th>Destination</th>
+		<th>Travel Start Date</th>
+		<th>Travel End Date</th>
+		<th>Plan</th>
+	</tr>
+	{%for item in usertrip%}
+	<tr>
+		<td><a href="{%url 'blackbelt:destination' item.id%}">{{item.destination}}</a></td>
+		<td>{{item.date_from}}</td>
+		<td>{{item.date_to}}</td>
+		<td>{{item.description}}</td>
+	</tr>
+	{%endfor%}
+</table>
+<hr style="margin-bottom: 40px; margin-top: 40px;">
+{% if messages %}
+{% for message in messages %}
+<p style="color: red;">{{message}}</p>
+{% endfor %}
+{% endif %}
+
+<h4 style="margin-top: 15px; text-align: left;">Other User's Travel Plans</h4>
+<table style="border: 2px solid black; width: 900px; text-align: center;">
+	<tr>
+		<th>Name</th>
+		<th>Destination</th>
+		<th>Travel Start Date</th>
+		<th>Travel End Date</th>
+		<th>Do You Want To Join?</th>
+	</tr>
+	{%for item in alltrip%}
+	<tr>
+		<td>{{item.user.name}}</td>
+		<td><a href="{%url 'blackbelt:destination' item.id%}">{{item.destination}}</a></td>
+		<td>{{item.date_from}}</td>
+		<td>{{item.date_to}}</td>
+		<td><a href="{%url 'blackbelt:join' item.id%}">Join</a></td>
+	</tr>
+	{%endfor%}
+</table>
+<hr>
+<a href="{%url 'blackbelt:add'%}" style="margin-left: 800px;">Add Travel Plan</a>
+</body>
+</html>
